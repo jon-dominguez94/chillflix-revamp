@@ -3,20 +3,20 @@ import { csrfFetch } from './csrf';
 const SET_USER = "session/SET_USER";
 const REMOVE_USER = "session/REMOVE_USER";
 
-const login_action = (user) => {
+const loginAction = (user) => {
     return {
         type: SET_USER,
         payload: user
     };
 };
 
-const logout_action = () => {
+const logoutAction = () => {
     return {
         type: REMOVE_USER
     };
 };
 
-export const login_thunk = (user) => async (dispatch) => {
+export const loginThunk = (user) => async (dispatch) => {
     const { credential, password } = user;
     const response = await csrfFetch('/api/session', {
         method: 'POST',
@@ -27,7 +27,14 @@ export const login_thunk = (user) => async (dispatch) => {
     });
 
     const data = await response.json();
-    dispatch(login_action(data.user))
+    dispatch(loginAction(data.user))
+    return response;
+}
+
+export const restoreUserThunk = () => async (dispatch) => {
+    const response = await csrfFetch('/api/session');
+    const data = await response.json();
+    dispatch(loginAction(data.user))
     return response;
 }
 
