@@ -1,6 +1,7 @@
 import { csrfFetch } from './csrf';
 
 const SET_USER = "session/SET_USER";
+const CREATE_USER = "session/CREATE_USER";
 const REMOVE_USER = "session/REMOVE_USER";
 
 const loginAction = (user) => {
@@ -35,6 +36,22 @@ export const restoreUserThunk = () => async (dispatch) => {
     const response = await csrfFetch('/api/session');
     const data = await response.json();
     dispatch(loginAction(data.user))
+    return response;
+}
+
+export const signupUserThunk = (user) => async (dispatch) => {
+    const { username, email, password } = user;
+    const response = await csrfFetch('/api/users', {
+        method: 'POST',
+        body: JSON.stringify({
+            username,
+            email,
+            password
+        })
+    });
+
+    const data = await response.json();
+    dispatch(loginAction(data.user));
     return response;
 }
 
