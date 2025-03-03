@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
+// import { Navigate } from 'react-router-dom';
+import MyRedirect from '../../MyRedirect';
 
-import * as sessionActions from '../../store/session';
+import * as sessionActions from '../../../store/session';
 import './SignupForm.css';
 
 const SignupFormPage = () => {
@@ -16,14 +17,14 @@ const SignupFormPage = () => {
     const [ errors, setErrors ] = useState([]);
 
 
-    if (sessionUser) return <Navigate to="/" replace />
+    if (sessionUser) return <MyRedirect />
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
         if (password === confirmPassword) {
             setErrors([]);
-            return dispatch(sessionActions.signupUserThunk({
+            return dispatch(sessionActions.signupThunk({
                 username,
                 email,
                 password

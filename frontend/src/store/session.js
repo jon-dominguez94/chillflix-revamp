@@ -39,7 +39,7 @@ export const restoreUserThunk = () => async (dispatch) => {
     return response;
 }
 
-export const signupUserThunk = (user) => async (dispatch) => {
+export const signupThunk = (user) => async (dispatch) => {
     const { username, email, password } = user;
     const response = await csrfFetch('/api/users', {
         method: 'POST',
@@ -52,6 +52,14 @@ export const signupUserThunk = (user) => async (dispatch) => {
 
     const data = await response.json();
     dispatch(loginAction(data.user));
+    return response;
+}
+
+export const logoutThunk = () => async (dispatch) => {
+    const response = await csrfFetch('/api/session', {
+        method: 'DELETE'
+    });
+    dispatch(logoutAction());
     return response;
 }
 
