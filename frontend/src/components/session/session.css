@@ -1,0 +1,249 @@
+/* **************************** */
+/* SPLASH PAGE */
+/* **************************** */
+.splash-container {
+    background: linear-gradient(to right, #000, transparent), url('./../../assets/bb2.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+/* .main-header,
+.nav-items,
+.nav-links,
+.nav-controls,
+.signup  */
+.center-flex {
+    align-items: center;
+    display: flex;
+}
+
+.main-header {
+    justify-content: space-between;
+    padding: 5px 25px;
+}
+
+.main-logo {
+    height: 60px;
+    width: 150px;
+}
+
+.session-btn {
+    background-color: #e50914;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 400;
+    height: 50%;
+    line-height: normal;
+    padding: 7px 8px;
+}
+
+.signin {
+    box-sizing: border-box;
+    padding: 7px 20px;
+}
+
+.signup-container {
+    box-sizing: border-box;
+    font-family: 'Ramabhadra', sans-serif;
+    padding: 0 40px;
+    padding-top: 200px;
+}
+
+.signup-msg {
+    font-size: 47px;
+    font-weight: bolder;
+    max-width: 80%;
+}
+
+.signup-sub-msg {
+    font-size: 18px;
+    margin: 10px 0 25px 0;
+}
+
+.signup {
+    display: flex;
+    padding: 10px 8px;
+    justify-content: center;
+    width: 150px;
+}
+
+.footer {
+    align-items: center;
+    bottom: 0;
+    color: #999;
+    display: flex;
+    height: 70px;
+    justify-content: flex-end;
+    padding: 20px;
+    position: fixed;
+    transition: background-color 0.4s;
+    width: 100%;
+    z-index: 5;
+}
+
+.footer>div {
+    margin: 0 15px;
+}
+
+.social {
+    font-size: 36px !important;
+    margin: 0;
+    margin-right: 10px;
+}
+
+.social:hover,
+.go-white:hover {
+    color: white;
+}
+
+/* **************************** */
+/* SESSION MODAL */
+/* **************************** */
+
+.modal-screen {
+    background: rgba(0, 0, 0, 0.5);
+    min-width: 100vw;
+    min-height: 100vh;
+    padding-bottom: 70px;
+    /* bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 2; */
+}
+
+.modal-form {
+    background: rgba(0, 0, 0, 0.70);
+    border-radius: 3px;
+    height: 620px;
+    margin: 30px auto;
+    width: 340px;
+}
+
+.session-form {
+    box-sizing: border-box;
+    height: 100%;
+    padding: 40px;
+    position: relative;
+    width: 100%;
+}
+
+.form-info {
+    margin: 20px;
+    padding: 0 5px;
+}
+
+.form-header {
+    font-size: 32px;
+    font-weight: bolder;
+    margin: 20px 0;
+    padding-bottom: 10px;
+}
+
+.form-inputs * {
+    border-radius: 3px;
+}
+
+.form-input {
+    margin: 15px 0;
+    width: 100%;
+}
+
+.errorList {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.form-input.form-errors {
+    background-color: #e87c03;
+    color: white;
+    height: auto;
+    min-height: 50px;
+}
+
+.form-text,
+.form-btn {
+    height: 50px;
+}
+
+.form-text {
+    background: #333;
+    box-sizing: border-box;
+    color: black;
+    padding: 4px 20px;
+    position: relative;
+}
+
+.form-text label {
+    color: rgb(128, 128, 128);
+    display: inline;
+    font-size: 16px;
+    position: absolute;
+    top: 33%;
+    transition: top 0.1s, font-size 0.1s;
+}
+
+.form-input input[type="text"],
+.form-input input[type="password"] {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    height: 30px;
+    outline: none;
+    width: 90%;
+    z-index: 10;
+}
+
+.form-btn {
+    background-color: #e50914;
+    font-weight: 700;
+    line-height: normal;
+    padding: 7px 8px;
+    text-align: center;
+}
+
+.demo-btn {
+    background-color: #555555;
+}
+
+.prompt {
+    position: absolute;
+    bottom: 40px;
+    font-weight: bold;
+}
+
+.grey-text {
+    color: rgb(128, 128, 128);
+}
+
+/* **************************** */
+/*  */
+/* **************************** */
+
+@media screen and (min-width: 481px) {
+    .modal-form {
+        /* margin: 30px auto; */
+        width: 450px;
+        /* height: 600px; */
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .signup {
+        width: 350px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+
+}
+
+@media screen and (max-height: 750px) {
+    .footer {
+        background: rgba(0, 0, 0, 0.7);
+    }
+}

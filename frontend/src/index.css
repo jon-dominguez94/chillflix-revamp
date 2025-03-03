@@ -1,1 +1,16 @@
 /* TODO Add site wide styles */
+body {
+    background: #141414;
+    color: white;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    min-width: 320px;
+    /* min-width: 100vw; */
+}
+
+.noshow {
+    display: none;
+}
+
+.shown {
+    display: block;
+}

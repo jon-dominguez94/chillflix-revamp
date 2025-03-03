@@ -3,9 +3,6 @@ import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-import LoginFormModal from '../LoginFormModal';
-import SignupFormModal from '../SignupFormModal';
-
 import '../session.css';
 
 const SplashPage = () => {
@@ -19,14 +16,11 @@ const SplashPage = () => {
     return (
         <div className="splash-container">
 
-            <div className="main-header">
+            <div className="center-flex main-header">
                 <Link to="/">
                     <img className="main-logo" src="https://fontmeme.com/permalink/181212/c5c4b3134061f86d06de9895b1ea5522.png" border="0" />
                 </Link>
-                <div className="session-btn signin" >
-                    {/* <Link className="session-btn signin" to='/login'>Sign In</Link> */}
-                    <LoginFormModal />
-                </div>
+                <Link className="session-btn signin" to='/login'>Sign In</Link>
             </div>
 
             <div className="signup-container">
@@ -36,10 +30,7 @@ const SplashPage = () => {
                 <div className="signup-sub-msg">
                     Join today, cancel anytime.
                 </div>
-                <div className="session-btn signup" >
-                    {/* <Link className="session-btn signup" to='/signup'>S I G N U P</Link> */}
-                    <SignupFormModal />
-                </div>
+                <Link className="session-btn signup" to='/signup'>Sign Up</Link>
             </div>
 
             <div className="footer">

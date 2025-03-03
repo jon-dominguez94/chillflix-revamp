@@ -4,8 +4,10 @@ import { Routes, Route } from "react-router-dom";
 
 import Navigation from "./components/Navigation";
 import SplashPage from "./components/session/SplashPage";
-import LoginFormPage from './components/session/LoginFormModal';
-import SignupFormPage from "./components/session/SignupFormModal";
+import LoginForm from "./components/session/LoginFormModal/LoginForm";
+import SignupForm from "./components/session/SignupFormModal/SignupForm";
+// import LoginFormPage from './components/session/LoginFormModal';
+// import SignupFormPage from "./components/session/SignupFormModal";
 import Browse from "./components/Browse";
 import MyRedirect from "./components/MyRedirect";
 
@@ -26,8 +28,8 @@ function App() {
       {isLoaded && (
         <Routes>
           <Route path="/" element={<SplashPage />} />
-          {/* <Route path="/login" element={<LoginFormPage />} /> */}
-          {/* <Route path="/signup" element={<SignupFormPage />} /> */}
+          <Route path="/login" element={<LoginForm />} />
+          <Route path="/signup" element={<LoginForm signup={true} />} />
 
           <Route path="/browse" element={<Browse />} />
           <Route path="*" element={<MyRedirect />} />
