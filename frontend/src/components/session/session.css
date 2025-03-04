@@ -14,14 +14,12 @@
 .nav-links,
 .nav-controls,
 .signup  */
-.center-flex {
-    align-items: center;
-    display: flex;
-}
+
 
 .main-header {
     justify-content: space-between;
-    padding: 5px 25px;
+    /* padding: 5px 25px; */
+    padding: 5px 20px 5px 10px;
 }
 
 .main-logo {
@@ -221,18 +219,21 @@
 }
 
 /* **************************** */
-/*  */
+/* MEDIA QUERIES */
 /* **************************** */
 
 @media screen and (min-width: 481px) {
     .modal-form {
-        /* margin: 30px auto; */
         width: 450px;
-        /* height: 600px; */
     }
 }
 
 @media screen and (min-width: 769px) {
+    .main-header {
+        padding: 10px 30px 10px 20px;
+        /* padding: 5px 20px 5px 10px; */
+    }
+
     .signup {
         width: 350px;
     }

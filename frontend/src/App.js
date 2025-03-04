@@ -5,9 +5,12 @@ import { Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import SplashPage from "./components/session/SplashPage";
 import LoginForm from "./components/session/LoginFormModal/LoginForm";
-import SignupForm from "./components/session/SignupFormModal/SignupForm";
-// import LoginFormPage from './components/session/LoginFormModal';
-// import SignupFormPage from "./components/session/SignupFormModal";
+import SearchPage from "./components/Search";
+
+// remove
+import TempPage from "./components/Temp";
+//
+
 import Browse from "./components/Browse";
 import MyRedirect from "./components/MyRedirect";
 
@@ -32,6 +35,11 @@ function App() {
           <Route path="/signup" element={<LoginForm signup={true} />} />
 
           <Route path="/browse" element={<Browse />} />
+          <Route path="/search" element={<SearchPage />} />
+
+          <Route path="/recentlyadded" element={<TempPage name="rcently added" />} />
+          <Route path="/comingsoon" element={<TempPage name="coming soon" />} />
+          <Route path="/list" element={<TempPage name="my list" />} />
           <Route path="*" element={<MyRedirect />} />
         </Routes>
       )}
