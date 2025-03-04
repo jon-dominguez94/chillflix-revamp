@@ -1,48 +1,32 @@
-.navigation-wrapper .main-header {
-    /* justify-content: space-between; */
-    /* align-items: flex-start; */
-    /* padding: 10px 30px 0 50px !important; */
-    /* width: 100%; */
-}
-
+/* **************************** */
+/* NAV BAR */
+/* **************************** */
 .navigation-wrapper .main-logo {
-    /* width: 150px; */
-    /* height: 60px; */
     height: 40px;
     width: 100px;
-    /* z-index: 2; */
 }
 
 .navigation-wrapper .nav-items {
     justify-content: space-between;
-    /* align-items: center; */
     width: 88%;
-    /* padding-top: 3px; */
 }
 
-.navigation-wrapper .nav-items * {
-    /* color: lightgrey; */
-    /* color: #e5e5e599; */
-}
-
-/* .navigation-wrapper .nav-links {
-    padding-top: 7px;
-} */
+/* **************************** */
+/* NAV LINKS */
+/* **************************** */
 
 .navigation-wrapper .regular {
     display: none;
-    /* display: none !important; */
 }
 
 .navigation-wrapper .nav-link-item {
+    color: #e5e5e599;
     font-size: 13px;
     padding: 0 10px;
     white-space: nowrap;
-    color: #e5e5e599;
 }
 
 .navigation-wrapper .noh:hover {
-    /* font-weight: bolder; */
     color: #b3b3b399;
 }
 
@@ -57,29 +41,22 @@
 }
 
 .navigation-wrapper .hamburger {
-    /* display: none !important; */
     cursor: pointer;
     font-size: 13px;
-    /* padding-top: 16px; */
     position: relative;
 
     span {
-        /* color: white; */
         margin: 0 7px 0 15px;
         font-weight: 500;
-        /* color: white; */
     }
 
     i {
-        /* color: white; */
         font-size: 15px;
         font-weight: 700;
     }
 
     #ham-space {
         height: 40px;
-        /* width: 10px; */
-        background: red;
     }
 }
 
@@ -90,41 +67,33 @@
 }
 
 .navigation-wrapper .ham-nav-links {
-    /* display: flex; */
     flex-direction: column;
-    /* align-items: center; */
 }
 
 .navigation-wrapper .in-hamburger {
-    width: 260px;
-    position: absolute;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    left: -90%;
-    /* bottom: -10%; */
-    top: 100%;
-    /* display: none; */
     background: rgba(0, 0, 0, 0.8);
     border-top: 2px solid white;
-    /* // margin-top: 40px; */
+    display: none;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    left: -90%;
+    position: absolute;
+    top: 100%;
     transition: display 0.4s linear;
+    width: 260px;
 
     .fa-caret-up {
+        font-size: 22px;
         position: absolute;
         top: -14px;
-        font-size: 22px;
     }
 
     a {
-        padding: 20px;
         color: #979797;
+        padding: 20px;
     }
 
     a.active {
         color: #e5e5e5;
-    }
-
-    i {
-        /* color: white; */
     }
 }
 
@@ -132,32 +101,10 @@
     display: flex;
 }
 
-.navigation-wrapper .nav-controls {
-    position: relative;
-}
-
-.navigation-wrapper.nav-controls * {
-    margin: 0 5px;
-}
-
-.navigation-wrapper .nav-control-wrapper {
-    /* // height: 10vh; */
-    position: absolute;
-    top: 0;
-    /* // left: 10px; */
-    /* background: red;; */
-    right: 9px;
-    width: 56px;
-    height: 50px;
-    color: transparent;
-    cursor: pointer;
-}
-
 .navigation-wrapper .onh {
-    width: 100%;
     text-align: center;
     transition: background-color 0.2s linear;
-
+    width: 100%;
 }
 
 .navigation-wrapper .onh:hover {
@@ -168,27 +115,28 @@
 /* SEARCH BAR */
 /* **************************** */
 
+.navigation-wrapper .nav-controls {
+    position: relative;
+}
+
 .navigation-wrapper .search-controls {
-    min-width: 30px;
+    border: 0.5px solid transparent;
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
-    border: 0.5px solid transparent;
-    /* // border: 0.5px solid white; */
-    /* padding: 5px 0 5px 5px; */
-    padding: 5px;
-    transition: width 0.3s linear, background-color 0.3s ease-in;
-    box-sizing: border-box;
+    min-width: 30px;
     overflow: hidden;
-
+    padding: 5px;
     position: absolute;
     right: 100%;
+    transition: width 0.3s linear, background-color 0.3s ease-in;
 }
 
 .navigation-wrapper .search-btn {
-    font-size: 22px;
-    width: 25px;
-    margin: 0;
     cursor: pointer;
+    font-size: 22px;
+    margin: 0;
+    width: 25px;
 }
 
 .navigation-wrapper .search-btn:active {
@@ -196,14 +144,13 @@
 }
 
 .navigation-wrapper .search-controls input {
-    /* width: 230px; */
-    width: 0px;
     background: transparent;
     border: none;
+    color: white;
     font-size: 14px;
     outline: none;
     transition: width 0.3s ease-in-out;
-
+    width: 0px;
 }
 
 .navigation-wrapper .white {
@@ -225,16 +172,6 @@
     justify-content: flex-end;
 }
 
-.navigation-wrapper .search-closer {
-    /* // display: none; */
-    width: 0px;
-}
-
-.navigation-wrapper .close-width {
-    /* // display: block; */
-    width: 22px;
-}
-
 /* **************************** */
 /* PROFILE COMPONENT */
 /* **************************** */
@@ -243,17 +180,11 @@
     cursor: pointer;
 }
 
-.navigation-wrapper .profile-dropdown {
-    display: flex;
-    align-items: center;
-    /* color: red; */
-}
-
 .navigation-wrapper .profile-logo {
+    border-radius: 5px;
     height: 35px;
     margin-right: 7px;
     width: 35px;
-    border-radius: 5px;
 }
 
 .navigation-wrapper .fa-caret-down {
@@ -267,21 +198,19 @@
 .navigation-wrapper .dropdown-caret {
     font-size: 22px;
     position: absolute;
-    top: 36px;
-        right: 21px;
-        /* width: 160px; */
+    right: 21px;
+    top: 44px;
 }
 
 .navigation-wrapper .dropdown-content {
-    position: absolute;
     display: flex;
     flex-direction: column;
-    top: 50px;
-    right: 0px;
-    width: 160px;
     margin: 0;
     overflow: hidden;
-    /* display: none; */
+    position: absolute;
+    right: 0px;
+    top: 57px;
+    width: 160px;
 }
 
 .navigation-wrapper #my-dropdown {
@@ -294,14 +223,9 @@
 }
 
 .navigation-wrapper .drop-item {
-    /* color: #fff; */
-    /* color: red; */
+    letter-spacing: 0.5px;
     margin: 0;
     padding: 10px;
-    letter-spacing: 0.5px;
-    /* font-family: Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif; */
-    /* font-weight: 700; */
-    /* // background-color: black; */
 }
 
 .navigation-wrapper .drop-item:hover {
@@ -311,24 +235,19 @@
 
 .navigation-wrapper .manage-link {
     border-bottom: 0.2px solid #333333;
-    /* // width: 100%; */
     padding: 20px 10px;
-    /* font-weight: 500; */
-    /* font-weight: 300; */
 }
 
 .navigation-wrapper .nav-control-wrapper {
-    /* // height: 10vh; */
-    position: absolute;
-    top: 0;
-    /* // left: 10px; */
-
-    right: 9px;
-    width: 56px;
-    height: 50px;
     color: transparent;
     cursor: pointer;
+    height: 60px;
+    position: absolute;
+    right: -10px;
+    top: 0;
+    width: 70px;
 }
+
 
 @media screen and (min-width: 481px) {
 

@@ -30,7 +30,7 @@ const SplashPage = () => {
                 <div className="signup-sub-msg">
                     Join today, cancel anytime.
                 </div>
-                <Link className="session-btn signup" to='/signup'>Sign Up</Link>
+                <Link className="session-btn signup" to='/signup'>Get Started</Link>
             </div>
 
             <div className="footer">

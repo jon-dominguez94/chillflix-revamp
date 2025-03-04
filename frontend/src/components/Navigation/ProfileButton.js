@@ -23,9 +23,6 @@ const ProfileButton = ({user}) => {
         document.addEventListener('mouseover', closeMenu);
 
         return () => document.removeEventListener("mouseover", closeMenu);
-        // document.addEventListener('click', closeMenu);
-
-        // return () => document.removeEventListener("click", closeMenu);
     }, [showMenu]);
 
     const logout = (e) => {
@@ -34,8 +31,7 @@ const ProfileButton = ({user}) => {
     };
 
     return (
-        // <div className="profile-dropdown" onClick={openMenu}>
-        <div className="profile-dropdown" onMouseOver={openMenu}>
+        <div className="center-flex profile-dropdown" onMouseOver={openMenu}>
             <img className="profile-logo" src="https://assets.nflxext.com/ffe/profiles/avatars_v2/32x32/PICON_025.png" alt="" />
             <i className={`fa fa-caret-down ${showMenu && 'rotated'}`}></i>
             {showMenu && (
