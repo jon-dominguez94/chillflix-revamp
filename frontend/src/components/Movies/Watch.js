@@ -1,39 +1,68 @@
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+
+import * as moviesActions from '../../store/movies'
 
 import MyRedirect from "../MyRedirect";
 
 const Watch = () => {
+    const dispatch = useDispatch();
+    const { watchId } = useParams();
     const sessionUser = useSelector(state => state.session.user);
+    const movie = useSelector(state => state.movies[watchId]);
+
+    const [isMoviesLoaded, setIsMoviesLoaded ] = useState(false);
+
+    useEffect(() => {
+    dispatch(moviesActions.receiveMoviesThunk())
+        .then(() => setIsMoviesLoaded(true));
+    }, [dispatch]);
+
 
     if (!sessionUser) return (<MyRedirect />);
 
-    return (
-        <div className="curr-movie-wrapper">
-            <div id="video-container">
-                <video
-                    className="current-video"
-                    width="100vw"
-                    height="auto"
-                    // src={this.props.movie.url}
-                    // src="https://s3-us-west-1.amazonaws.com/chillflix-prod/vids/office.mp4"
-                    controls
-                    // autoPlay
-                >
-                    Your browser does not support the video tag.
-                </video>
-
-                <Link className="nav-link-item" to="/">
-                    <div className="back-btn-container">
-                        <button className="back-btn" >
-                            <i className="fa fa-arrow-left"></i>
-                            <span className="back-text">Back to Browse</span>
-                        </button>
-                    </div>
-                </Link>
-
-            </div>
+    if (!movie) return (
+        <div className="center-flex not-found">
+            <p>Sorry, nothing to see here</p>
+            <Link className="nav-link-item" to="/">
+                <div className="back-btn-container">
+                    <button className="center-flex back-btn" >
+                        <i className="fa fa-arrow-left"></i>
+                        <span className="back-text">Back to Browse</span>
+                    </button>
+                </div>
+            </Link>
         </div>
+    );
+
+    return (
+        <>
+            {isMoviesLoaded && (<div className="center-flex curr-movie-wrapper">
+                <div id="video-container">
+                    <video
+                        className="current-video"
+                        width="100%"
+                        height="auto"
+                        src={movie.video}
+                        controls
+                        autoPlay
+                    >
+                        Your browser does not support the video tag.
+                    </video>
+
+                    <Link className="nav-link-item" to="/">
+                        <div className="back-btn-container">
+                            <button className="center-flex back-btn" >
+                                <i className="fa fa-arrow-left"></i>
+                                <span className="back-text">Back to Browse</span>
+                            </button>
+                        </div>
+                    </Link>
+
+                </div>
+            </div>)}
+        </>
     );
 }
 

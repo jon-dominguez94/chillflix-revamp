@@ -9,18 +9,19 @@ router.get(
 
         const list = await List.findByPk(listId, { include: Movie });
 
-        res.json(list);
+        res.json({list});
     })
 );
 
-router.get(
-    '/',
-    asyncHandler(async (req, res) => {
-        const list = await List.findAll({ include: Movie });
+// remove
+// router.get(
+//     '/',
+//     asyncHandler(async (req, res) => {
+//         const list = await List.findAll({ include: Movie });
 
-        res.json(list);
-    })
-);
+//         res.json(list);
+//     })
+// );
 
 router.post(
     '/',

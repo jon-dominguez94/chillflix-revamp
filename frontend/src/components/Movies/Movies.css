@@ -134,6 +134,66 @@
     transition: visibility 0.5s, opacity 0.5s linear;
 }
 
+/* **************************** */
+/* MAIN MOVIE */
+/* **************************** */
+
+.curr-movie-wrapper {
+    height: 100vh;
+    background: black;
+}
+
+.curr-movie-wrapper #video-container {
+    color: transparent;
+    margin: 0 auto;
+    position: relative;
+    transition: color 0.7s;
+    -webkit-transition: color 0.7s;
+    /* remove */
+    /* width: 100vw; */
+    /* height: auto; */
+}
+
+.curr-movie-wrapper #video-container,
+.not-found {
+    background: black;
+}
+
+.curr-movie-wrapper #video-container:hover {
+    color: white;
+}
+
+/* may need */
+/* .curr-movie-wrapper #video-container:-webkit-full-screen {
+    width: 100%;
+} */
+
+.not-found {
+    height: 100vh;
+    justify-content: center;
+}
+
+.not-found p {
+    font-size: 44px;
+}
+
+.back-btn-container {
+    color: inherit;
+    left: 0;
+    margin: 50px;
+    position: absolute;
+    top: 0;
+}
+
+.back-btn-container .fa.fa-arrow-left {
+    font-size: 36px;
+    margin-right: 15px;
+}
+
+/* **************************** */
+/* MEDIA QUERIES */
+/* **************************** */
+
 @media screen and (min-width: 481px) {}
 
 @media screen and (min-width: 769px) {
