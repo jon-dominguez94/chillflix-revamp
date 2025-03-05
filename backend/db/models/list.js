@@ -13,6 +13,11 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'userId'
       }
     )
+
+    List.belongsToMany(
+      models.Movie,
+      { through: models.ListMovie }
+    )
   };
   return List;
 };

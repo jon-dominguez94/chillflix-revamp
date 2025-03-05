@@ -12,6 +12,7 @@ import TempPage from "./components/Temp";
 //
 
 import Browse from "./components/Browse";
+import Watch from "./components/Movies/Watch";
 import MyRedirect from "./components/MyRedirect";
 
 import * as sessionActions from './store/session';
@@ -40,6 +41,9 @@ function App() {
           <Route path="/recentlyadded" element={<TempPage name="rcently added" />} />
           <Route path="/comingsoon" element={<TempPage name="coming soon" />} />
           <Route path="/list" element={<TempPage name="my list" />} />
+
+
+          <Route path="/watch/:watchId" element={<Watch />} />
           <Route path="*" element={<MyRedirect />} />
         </Routes>
       )}

@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 
 import MyRedirect from "../MyRedirect";
+import Movies from "../Movies";
 
 const Browse = () => {
     const sessionUser = useSelector(state => state.session.user);
@@ -8,9 +9,9 @@ const Browse = () => {
     if (!sessionUser) return (<MyRedirect />);
 
     return (
-        <>
-            home page
-        </>
+        <div className="browse-container">
+            <Movies />
+        </div>
     )
 }
 

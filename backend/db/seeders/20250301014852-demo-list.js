@@ -33,7 +33,7 @@ module.exports = {
     */
     for (let name of names) {
       const user = await User.findOne({ where: { username: name } });
-      const list = await List.findone({ where: { userId: user.id} })
+      const list = await List.findOne({ where: { userId: user.id} })
       await list.destroy()
     }
   }

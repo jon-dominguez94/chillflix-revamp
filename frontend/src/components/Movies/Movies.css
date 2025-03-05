@@ -1,0 +1,167 @@
+/* **************************** */
+/* MAIN MOVIE */
+/* **************************** */
+.main-thumb {
+    /* // display: inline-block; */
+    position: relative;
+    background: linear-gradient(to top, #000, transparent);
+    background: linear-gradient(to top, #141414, transparent);
+    width: 100vw;
+    height: auto;
+    /* // height: 75vh; */
+}
+
+.main-thumb .main-gif {
+    width: 100%;
+    position: relative;
+    content: url('https://s3-us-west-1.amazonaws.com/chillflix-prod/got.gif');
+    z-index: -1;
+}
+
+.main-thumb .main-video-info {
+    padding-left: 55px;
+    position: absolute;
+    /* top: 60%; */
+    top: 50%;
+    width: 50%;
+    /* max-width: 450px; */
+    transition: top 0.3s;
+    /* // z-index: 2000; */
+}
+
+.main-thumb .original {
+    text-transform: uppercase;
+    font-weight: 200;
+}
+
+.main-thumb .original span {
+    color: #e50914;
+    font-weight: 700;
+}
+
+.main-thumb .main-video-title {
+    font-size: 15px;
+    /* // margin-bottom:25px; */
+    white-space: nowrap;
+    transition: font-size 0.3s;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /* // font-family: Georgia, 'Times New Roman', Times, serif; */
+}
+
+.main-thumb .got-logo {
+    min-width: 220px;
+    margin: 10px 0 15px 0;
+}
+
+.main-thumb img {
+    /* position: relative; */
+    z-index: -1;
+}
+
+.main-thumb .main-video-links {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 15px;
+}
+
+.main-thumb .main-video-link {
+    margin-right: 10px;
+    padding: 10px 30px;
+    background: rgba(50, 50, 50, 0.35);
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+    /* border-color: transparent transparent transparent #dddddd; */
+    border-color: transparent transparent transparent black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-thumb .main-video-link span {
+    /* // margin-left: 10px; */
+    white-space: nowrap;
+}
+
+.main-thumb .main-video-link:hover {
+    filter: brightness(80%);
+    /* color: black;
+    background: #dddddd;
+    border-color: transparent transparent transparent #202020; */
+}
+
+.main-thumb .play-btn .main-video-link {
+    color: black;
+    background: #dddddd;
+}
+
+.main-thumb .list-btn .main-video-link {
+    /* color: black; */
+    background-color: rgba(109, 109, 110, 0.7);
+}
+
+.main-thumb .button.play {
+    box-sizing: border-box;
+    /* color: black; */
+    width: 16px;
+    height: 16px;
+    border-style: solid;
+    border-width: 8px 0px 8px 16px;
+    border-color: inherit;
+    border-radius: 2px;
+    margin-right: 10px;
+}
+
+.main-thumb .plus-wrapper {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.main-thumb .main-video-description {
+    display: none;
+    font-size: 14px;
+    margin-top: 15px;
+    letter-spacing: 0.8px;
+    line-height: 1.2;
+    width: 100%;
+    min-width: 300px;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0.5s, opacity 0.5s linear;
+}
+
+@media screen and (min-width: 481px) {}
+
+@media screen and (min-width: 769px) {
+    .main-thumb .main-video-title {
+            /* font-size: 30px !important; */
+            font-size: 30px;
+        }
+
+    .main-thumb .main-video-description {
+        display: block;
+    }
+
+
+}
+
+@media screen and (min-width: 1025px) {
+    .main-thumb .main-video-info {
+        top: 60% !important;
+        /* top: 70%; */
+    }
+}
+
+/* @media screen and (max-height: 750px) {}
+
+@media screen and (max-width: 1220px) {
+    .main-video-info {
+        top: 50% !important;
+    }
+
+    .main-video-title {
+        font-size: 20px !important;
+    }
+
+} */
