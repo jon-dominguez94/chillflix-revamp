@@ -1,6 +1,20 @@
 /* **************************** */
 /* NAV BAR */
 /* **************************** */
+.navigation-wrapper {
+    background: linear-gradient(to bottom, #222, transparent )
+                #141414;
+    position: fixed;
+    top: 0;
+    transition: background-color 0.2s linear;
+    width: 100vw;
+}
+
+.navigation-wrapper.gradient-bg {
+    background: linear-gradient(to bottom, #222, transparent);
+    transition: background-color 0.4s linear;
+}
+
 .navigation-wrapper .main-logo {
     height: 40px;
     width: 100px;
@@ -44,7 +58,6 @@
     cursor: pointer;
     font-size: 13px;
     position: relative;
-    z-index: 3;
 
     span {
         margin: 0 7px 0 15px;

@@ -28,7 +28,6 @@ function App() {
 
   return (
     <>
-      <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Routes>
           <Route path="/" element={<SplashPage />} />
@@ -47,6 +46,9 @@ function App() {
           <Route path="*" element={<MyRedirect />} />
         </Routes>
       )}
+      <div className="logged-header">
+        <Navigation isLoaded={isLoaded} />
+      </div>
     </>
   );
 }

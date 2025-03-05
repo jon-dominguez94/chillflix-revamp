@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useLocation, Link, NavLink } from "react-router-dom";
 
@@ -9,6 +10,24 @@ import './Navigation.css';
 const Navigation = ({ isLoaded }) => {
     const location = useLocation();
     const sessionUser = useSelector(state => state.session.user);
+    const [scrolled, setScrolled] = useState(location.pathname.includes('/browse'));
+
+    // add scroll event listener after first render
+    useEffect(() => {
+        const handleScroll = () => {
+            window.scrollY <= 20 ? setScrolled(true) : setScrolled(false)
+        }
+
+        window.addEventListener('scroll', handleScroll);
+
+        // cleanup listener
+        return () => { window.removeEventListener('scroll', handleScroll)};
+    }, []);
+
+    // only use scroll effect on browse page
+    useEffect(() => {
+        setScrolled(location.pathname.includes('/browse'));
+    }, [location]);
 
     if (!sessionUser || location.pathname.includes('/watch'))
         return <></>
@@ -16,8 +35,8 @@ const Navigation = ({ isLoaded }) => {
         return (
             <>
                 {isLoaded && (
-                    <div className="navigation-wrapper">
-                        <div className="center-flex main-header head-logged">
+                    <div className={`navigation-wrapper ${scrolled && 'gradient-bg'}`}>
+                        <div className="center-flex main-header">
                             <div>
                                 <Link to="/">
                                     <img className="main-logo" src="https://fontmeme.com/permalink/181212/c5c4b3134061f86d06de9895b1ea5522.png" border="0" />

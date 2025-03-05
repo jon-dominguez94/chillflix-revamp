@@ -4,10 +4,13 @@
 .main-thumb {
     /* // display: inline-block; */
     position: relative;
-    background: linear-gradient(to top, #000, transparent);
+    /* background: linear-gradient(to top, #000, transparent); */
     background: linear-gradient(to top, #141414, transparent);
+    /* background: linear-gradient(to top, #141414, transparent),
+                linear-gradient(to bottom, #222 -1%, transparent 10%); */
     width: 100vw;
     height: auto;
+    /* display: none; */
     /* // height: 75vh; */
 }
 

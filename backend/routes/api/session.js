@@ -4,7 +4,7 @@ const { check } = require('express-validator');
 
 const { handleValidationErrors } = require('../../utils/validation');
 const { setTokenCookie, restoreUser } = require('../../utils/auth');
-const { User, List } =  require('../../db/models');
+const { User } =  require('../../db/models');
 
 const router = express.Router();
 
@@ -65,16 +65,16 @@ router.get(
     }
 );
 
+// remove
+// router.get(
+//     '/test',
+//     async (req, res) => {
+//         await User.destroy({
+//             where: {}
+//         });
 
-router.get(
-    '/test',
-    async (req, res) => {
-        await User.destroy({
-            where: {}
-        });
-
-        res.json({ });
-    }
-);
+//         res.json({ });
+//     }
+// );
 
 module.exports = router;
