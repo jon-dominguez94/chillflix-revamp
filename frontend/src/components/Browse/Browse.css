@@ -1,4 +1,167 @@
 /* **************************** */
+/* SPINNER */
+/* **************************** */
+
+.spinner-container {
+    height: auto;
+    transition: height 0.5s, flex 0.3s ease-out;
+}
+
+.spinner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 30px 0;
+    padding-left: 6vw;
+    position: relative;
+}
+
+.spinner .category-header {
+    color: #e5e5e5;
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0 0 10px 3px;
+}
+
+.spinner .tn-scale {
+    position: relative;
+    left: 0;
+    transition: left 1s ease-in-out;
+}
+
+.spinner:hover .scroll {
+    visibility: visible;
+    opacity: 1;
+}
+
+.spinner:hover>.spinner-item-wrapper {
+    display: none;
+}
+
+.spinner .scroll {
+    background: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-size: 4vw;
+    height: 100%;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    transition: visibility 0.3s, opacity 0.3s linear, font-size 0.2s;
+    width: 6vw;
+}
+
+.spinner .right.scroll {
+    right: 0;
+}
+
+.spinner .left.scroll {
+    left: -6vw;
+}
+
+.spinner .scroll:hover {
+    background: rgba(0, 0, 0, 0.5);
+    font-size: 6vw;
+}
+
+/* **************************** */
+/* SPINNER ITEM */
+/* **************************** */
+
+.spinner-item {
+    box-shadow: 0px -3px 8px 1px #555;
+    cursor: pointer;
+    height: 16vw;
+    margin: 0 3px;
+    position: relative;
+    transition: transform 0.2s ease-in;
+}
+
+.spinner-item.enlarge:hover {
+    transform: scale(130%);
+    z-index: 3;
+}
+
+.spinner-item.enlarge:hover>* {
+    visibility: visible;
+    opacity: 1;
+}
+
+.spinner-item.enlarge:hover .movie-tn {
+    border-radius: 4px 4px 0 0;
+}
+
+.spinner-item .movie-tn {
+    border-radius: 4px;
+    height: 100%;
+    object-fit: fill;
+    width: auto;
+}
+
+.spinner-item .play-area {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.spinner-item .tn-links {
+    background: #222;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0px 3px 8px 1px #555;
+    padding: 13px;
+    transition: all 0.2s ease;
+}
+
+.spinner-item .round-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid #aaa;
+    border-radius: 50%;
+    height: 4vw;
+    font-size: 2vw;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.3s ease;
+    width: 4vw;
+}
+
+.spinner-item .round-button:active {
+    border: 2px solid #222;
+    outline: 2px solid white;
+    transition: none;
+}
+
+.spinner-item .play-btn {
+    background-color: white;
+    border-color: white;
+    color: #222;
+    margin-right: 8px;
+    transition: none;
+}
+
+.spinner-item .play-btn .fa {
+    padding-left: 3px;
+}
+
+.spinner-item .play-btn:hover {
+    filter: brightness(80%);
+}
+
+.spinner-item .expand-btn {
+    margin-left: auto;
+}
+
+.spinner-item .round-button .fa {
+    padding-top: 1.5px;
+}
+
+.spinner-item .plus-btn:hover,
+.spinner-item .expand-btn:hover {
+    background-color: rgba(86, 86, 86, 0.5);
+    border-color: white;
+}
+
+/* **************************** */
 /* FOOTER */
 /* **************************** */
 
