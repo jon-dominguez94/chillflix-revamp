@@ -12,9 +12,7 @@ const Searchbar = ({ isLoaded }) => {
     // - once content is loaded, check for search page and restore search state
     // - needed if user manually types in url or refreshes during a search
     useEffect(() => {
-        console.log(location.pathname);
         if (isLoaded) {
-            console.log('isLoaded');
             if (location.pathname === "/search") {
                 console.log('restoring queryString');
                 setQueryString(location.search.split('?=')[1]);

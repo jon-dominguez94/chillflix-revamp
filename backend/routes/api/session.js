@@ -65,16 +65,4 @@ router.get(
     }
 );
 
-// remove
-// router.get(
-//     '/test',
-//     async (req, res) => {
-//         await User.destroy({
-//             where: {}
-//         });
-
-//         res.json({ });
-//     }
-// );
-
 module.exports = router;

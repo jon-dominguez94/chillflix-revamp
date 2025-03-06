@@ -1,9 +1,28 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+
+import * as listActions from '../../store/list';
 
 const MainVideo = () => {
+    const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
     const movie = useSelector(state => state.movies.main);
+    const list = useSelector(state => state.list);
+
+    const [ onList, setOnList ] = useState(false);
+
+    useEffect(() => {
+        setOnList(movie.id in list);
+    }, [list]);
+
+    function handleList() {
+        if (onList) {
+            dispatch(listActions.removeFromListThunk(sessionUser.id, movie.id));
+        } else {
+            dispatch(listActions.addToListThunk(sessionUser.id, movie.id));
+        }
+    }
 
     return (
         <div className="main-thumb">
@@ -31,12 +50,10 @@ const MainVideo = () => {
                         </div>
                     </Link>
 
-                    {/* <div className="list-btn" onClick={this.handleList}> */}
-                    <div className="list-btn">
+                    <div className="list-btn" onClick={handleList}>
                         <div className="main-video-link">
                             <div className="plus-wrapper">
-                                <i className="fa fa-plus"></i>
-                                {/* {this.renderButton()} */}
+                                {onList ? <i className="fa fa-check" /> : <i className="fa fa-plus"></i>}
                             </div>
                             <span>My List</span>
                         </div>
@@ -44,7 +61,6 @@ const MainVideo = () => {
                 </div>
             </div>
         </div>
-
     )
 }
 

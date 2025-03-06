@@ -26,7 +26,7 @@ router.get(
 
 router.get(
     '/:movieId',
-    // validateFetch,
+    validateFetch,
     asyncHandler(async (req, res) => {
         const { movieId } = req.params
 

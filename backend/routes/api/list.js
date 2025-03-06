@@ -3,11 +3,14 @@ const router = require('express').Router();
 const { List, Movie } = require('../../db/models');
 
 router.get(
-    '/:listId',
+    '/:userId',
     asyncHandler(async (req, res) => {
-        const { listId } = req.params;
+        const { userId } = req.params;
 
-        const list = await List.findByPk(listId, { include: Movie });
+        const list = await List.findOne({
+            where: { userId: userId },
+            include: Movie
+        });
 
         res.json({list});
     })
@@ -26,14 +29,16 @@ router.get(
 router.post(
     '/',
     asyncHandler(async (req, res, next) => {
-        const { listId, movieId } = req.body;
+        const { userId, movieId } = req.body;
 
-        const list = await List.findByPk(listId);
+        const list = await List.findOne({
+            where: { userId: userId }
+        });
         const movie = await Movie.findByPk(movieId);
 
         try {
-            list.addMovie(movie);
-            return res.json({ message: "success" });
+            const listItem = await list.addMovie(movie);
+            return res.json({ movie: movie});
         } catch {
             const err = new Error('Could not add movie to list');
             err.status = 401;
@@ -47,14 +52,16 @@ router.post(
 router.delete(
     '/',
     asyncHandler(async (req, res, next) => {
-        const { listId, movieId } = req.body;
+        const { userId, movieId } = req.body;
 
-        const list = await List.findByPk(listId);
+        const list = await List.findOne({
+            where: { userId: userId }
+        });
         const movie = await Movie.findByPk(movieId);
 
         try {
             list.removeMovie(movie);
-            return res.json({ message: "success" });
+            return res.json({ movie: movie });
         } catch {
             const err = new Error('Could not remove movie from list');
             err.status = 401;
