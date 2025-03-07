@@ -4,10 +4,10 @@ const ADD_TO_LIST = "list/ADD_TO_LIST";
 const REMOVE_FROM_LIST = "list/REMOVE_FROM_LIST";
 const GET_LIST_ITEMS = "list/GET_LIST_ITEMS";
 
-const addToListAction = (movie) => {
+const addToListAction = (data) => {
     return {
         type: ADD_TO_LIST,
-        payload: movie
+        payload: data
     }
 }
 
@@ -18,7 +18,7 @@ export const addToListThunk = (userId, movieId) => async (dispatch) => {
     });
 
     const data = await response.json();
-    dispatch(addToListAction(data.movie));
+    dispatch(addToListAction(data));
     return response;
 }
 
@@ -67,12 +67,15 @@ const listReducer = (state = initialState, action) => {
             }
             return newState;
         case ADD_TO_LIST:
-            // newState = Object.assign({}, state);
             newState = {...state};
-            newState[action.payload.id] = action.payload;
+
+            newState[action.payload.movie.id] = {
+                ListMovie: action.payload.ListMovie,
+                ...action.payload.movie
+            };
+
             return newState;
         case REMOVE_FROM_LIST:
-            // newState = Object.assign({}, state);
             newState = {...state};
             delete newState[action.payload];
             return newState;

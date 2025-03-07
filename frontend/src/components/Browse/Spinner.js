@@ -6,12 +6,20 @@ import SpinnerItem from "./SpinnerItem"
 
 const Spinner = ({ category, movies, order }) => {
     const listMovies = useSelector(state => state.list);
-    const [ spinnerMovies, setSpinnerMovies ] = useState(movies);
+    const [ spinnerMovies, setSpinnerMovies ] = useState(movies || []);
 
     useEffect(() => {
-        if (order === "1")
-            setSpinnerMovies(Object.values(listMovies));
+        if (order === "1"){
+            // setSpinnerMovies(Object.values(listMovies));
+            setSpinnerMovies(Object.values(listMovies).sort(sortByDate));
+        }
     }, [listMovies]);
+
+    function sortByDate(a, b) {
+        const d1 = new Date(a.ListMovie.createdAt);
+        const d2 = new Date(b.ListMovie.createdAt);
+        return d1 - d2;
+    }
 
     function scroll(direction) {
         let newMovies = [...spinnerMovies];

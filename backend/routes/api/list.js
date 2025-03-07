@@ -1,6 +1,6 @@
 const asyncHandler = require('express-async-handler');
 const router = require('express').Router();
-const { List, Movie } = require('../../db/models');
+const { List, Movie, ListMovie } = require('../../db/models');
 
 router.get(
     '/:userId',
@@ -9,7 +9,10 @@ router.get(
 
         const list = await List.findOne({
             where: { userId: userId },
-            include: Movie
+            include: Movie,
+            order: [
+                [Movie, ListMovie, 'createdAt']
+            ]
         });
 
         res.json({list});
@@ -38,7 +41,8 @@ router.post(
 
         try {
             const listItem = await list.addMovie(movie);
-            return res.json({ movie: movie});
+            // return res.json({ movie: movie});
+            return res.json({ListMovie: listItem[0], movie: movie});
         } catch {
             const err = new Error('Could not add movie to list');
             err.status = 401;
