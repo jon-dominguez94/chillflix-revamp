@@ -45,9 +45,9 @@ const Navigation = ({ isLoaded }) => {
                             <div className="center-flex nav-items">
                                 <div className="center-flex nav-links regular">
                                     <NavLink className="nav-link-item noh" to="/browse">Home</NavLink>
-                                    <NavLink className="nav-link-item noh" to="/recentlyadded">Recently Added</NavLink>
-                                    <NavLink className="nav-link-item noh" to="/comingsoon">Coming Soon</NavLink>
-                                    <NavLink className="nav-link-item noh" to="/list">My List</NavLink>
+                                    <NavLink className="nav-link-item noh" to="/browse/recentlyadded">Recently Added</NavLink>
+                                    <NavLink className="nav-link-item noh" to="/browse/comingsoon">Coming Soon</NavLink>
+                                    <NavLink className="nav-link-item noh" to="/browse/list">My List</NavLink>
                                 </div>
 
                                 <div className="center-flex hamburger">
@@ -58,9 +58,9 @@ const Navigation = ({ isLoaded }) => {
                                     <div className="center-flex ham-nav-links in-hamburger">
                                         <i className="fa fa-caret-up"></i>
                                         <NavLink className="nav-link-item onh" to="/browse">Home</NavLink>
-                                        <NavLink className="nav-link-item onh" to="/recentlyadded">Recently Added</NavLink>
-                                        <NavLink className="nav-link-item onh" to="/comingsoon">Coming Soon</NavLink>
-                                        <NavLink className="nav-link-item onh" to="/list">My List</NavLink>
+                                        <NavLink className="nav-link-item onh" to="/browse/recentlyadded">Recently Added</NavLink>
+                                        <NavLink className="nav-link-item onh" to="/browse/comingsoon">Coming Soon</NavLink>
+                                        <NavLink className="nav-link-item onh" to="/browse/list">My List</NavLink>
                                     </div>
                                 </div>
 

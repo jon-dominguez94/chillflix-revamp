@@ -34,13 +34,8 @@ function App() {
           <Route path="/login" element={<LoginForm />} />
           <Route path="/signup" element={<LoginForm signup={true} />} />
 
-          <Route path="/browse" element={<Browse />} />
+          <Route path="/browse/*" element={<Browse />} />
           <Route path="/search" element={<SearchPage />} />
-
-          <Route path="/recentlyadded" element={<TempPage name="rcently added" />} />
-          <Route path="/comingsoon" element={<TempPage name="coming soon" />} />
-          <Route path="/list" element={<TempPage name="my list" />} />
-
 
           <Route path="/watch/:watchId" element={<Watch />} />
           <Route path="*" element={<MyRedirect />} />

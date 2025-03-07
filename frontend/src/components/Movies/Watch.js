@@ -15,8 +15,8 @@ const Watch = () => {
     const [isMoviesLoaded, setIsMoviesLoaded ] = useState(false);
 
     useEffect(() => {
-    dispatch(moviesActions.receiveMoviesThunk())
-        .then(() => setIsMoviesLoaded(true));
+        dispatch(moviesActions.receiveMoviesThunk())
+            .then(() => setIsMoviesLoaded(true));
     }, [dispatch]);
 
 

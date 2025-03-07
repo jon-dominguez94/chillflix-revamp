@@ -33,7 +33,9 @@ const receiveMovieAction = (movie) => {
     };
 };
 
-const initialState = {};
+const initialState = {
+    main: {}
+};
 
 const moviesReducer = (state = initialState, action) => {
     let newState;

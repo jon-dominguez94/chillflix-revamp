@@ -67,13 +67,13 @@ const listReducer = (state = initialState, action) => {
             }
             return newState;
         case ADD_TO_LIST:
-            newState = Object.assign({}, state);
-            // newState = {...state};
+            // newState = Object.assign({}, state);
+            newState = {...state};
             newState[action.payload.id] = action.payload;
             return newState;
         case REMOVE_FROM_LIST:
-            newState = Object.assign({}, state);
-            // newState = {...state};
+            // newState = Object.assign({}, state);
+            newState = {...state};
             delete newState[action.payload];
             return newState;
         default:

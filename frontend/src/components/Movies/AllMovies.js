@@ -4,16 +4,10 @@ import { useSelector } from "react-redux";
 import Spinner from "../Browse/Spinner";
 
 const AllMovies = () => {
-    let movies = Object.assign({}, useSelector(state => state.movies));
     const listMovies = useSelector(state => state.list);
+    const stateMovies = useSelector(state => state.movies);
 
-    // const [listSet, setListSet] = useState([]);
-
-    // useEffect(() => {
-    //     console.log("list movies: ", listMovies);
-    //     setListSet(Object.values(listMovies));
-    //     console.log("list set: ", listSet);
-    // }, [listMovies]);
+    let movies = {...stateMovies};
 
     delete movies['main'];
     movies = Object.values(movies);
@@ -36,7 +30,7 @@ const AllMovies = () => {
 
     return (
         <div className="spinner-container">
-            <Spinner category="My List" movies={Object.values(listMovies)} order="1" />
+            <Spinner category="My List" movies={{...listMovies}} order="1" />
             <Spinner category="Recently Added" movies={set1.slice(0, 8)} order="2" />
             <Spinner category="Popular on Chillflix" movies={set1.slice(8)} order="3" />
             <Spinner category="Chill Night" movies={set2.slice(0, 8)} order="4" />

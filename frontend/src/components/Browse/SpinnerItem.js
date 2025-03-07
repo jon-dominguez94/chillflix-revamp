@@ -65,11 +65,10 @@ const SpinnerItem = ({movie}) => {
                 </div>
                 {showModal && (
                     <Modal onClose={collapse}>
-                        <Preview movie={movie} onList={onList} onClose={collapse} />
+                        <Preview sessionUser={sessionUser} movie={movie} onList={onList} onClose={collapse} />
                     </Modal>
                 )}
             </div>
-
         </>
     );
 }
