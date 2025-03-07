@@ -11,7 +11,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 30px 0;
+    padding: 15px 0;
     padding-left: 6vw;
     position: relative;
 }
@@ -70,7 +70,7 @@
 .spinner-item {
     box-shadow: 0px -3px 8px 1px #555;
     cursor: pointer;
-    height: 16vw;
+    height: 23.7vw;
     margin: 0 3px;
     position: relative;
     transition: transform 0.2s ease-in;
@@ -97,8 +97,10 @@
     width: auto;
 }
 
+.preview-container .play-area,
 .spinner-item .play-area {
     bottom: 0;
+    cursor: pointer;
     left: 0;
     position: absolute;
     right: 0;
@@ -117,11 +119,14 @@
     background-color: rgba(0, 0, 0, 0.5);
     border: 2px solid #aaa;
     border-radius: 50%;
+    /* height: 2.5vw; */
     height: 4vw;
+    /* font-size: 1.5vw; */
     font-size: 2vw;
     justify-content: center;
     text-align: center;
     transition: all 0.3s ease;
+    /* width: 2.5vw; */
     width: 4vw;
 }
 
@@ -152,13 +157,19 @@
 }
 
 .spinner-item .round-button .fa {
-    padding-top: 1.5px;
+    padding-top: 0.4vw;
 }
 
+.preview-container .plus-btn:hover,
 .spinner-item .plus-btn:hover,
 .spinner-item .expand-btn:hover {
     background-color: rgba(86, 86, 86, 0.5);
     border-color: white;
+}
+
+.spinner-item .tn-title {
+    font-size: 2vw;
+    margin-top: 2vw;
 }
 
 /* **************************** */
@@ -211,4 +222,37 @@
 
 .footer-prof div {
     margin-right: 20px;
+}
+
+/* **************************** */
+/* MEDIA QUERIES */
+/* **************************** */
+
+@media screen and (min-width: 481px) {
+
+}
+
+@media screen and (min-width: 769px) {
+    .spinner-item {
+        height: 16vw;
+    }
+
+    .spinner-item .round-button {
+        height: 2.5vw;
+        font-size: 1.5vw;
+        width: 2.5vw;
+    }
+
+    .spinner-item .round-button .fa {
+        padding-top: 0.2vw;
+    }
+
+    .spinner-item .tn-title {
+        font-size: 1.3vw;
+        margin-top: 1.3vw;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+
 }
