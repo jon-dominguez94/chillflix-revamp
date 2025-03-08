@@ -4,11 +4,14 @@ import { useSelector, useDispatch } from "react-redux";
 
 import * as listActions from '../../store/list';
 
-const MainVideo = () => {
+const MainVideo = ({movies}) => {
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
-    const movie = useSelector(state => state.movies.main);
+    // const movies = useSelector(state => state.movies);
     const list = useSelector(state => state.list);
+
+    const key = Object.keys(movies).find(key => movies[key].title === "Game of Thrones");
+    const movie = movies[key];
 
     const [ onList, setOnList ] = useState(false);
 

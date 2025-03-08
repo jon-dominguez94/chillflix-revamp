@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Modal } from '../../context/Modal';
@@ -10,6 +10,8 @@ import * as listActions from '../../store/list';
 const SpinnerItem = ({movie}) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const location = useLocation();
+
     const sessionUser = useSelector(state => state.session.user);
     const list = useSelector(state => state.list);
 
@@ -21,21 +23,24 @@ const SpinnerItem = ({movie}) => {
     }, [list]);
 
     function handleList() {
-        if (onList) {
-            dispatch(listActions.removeFromListThunk(sessionUser.id, movie.id));
-        } else {
-            dispatch(listActions.addToListThunk(sessionUser.id, movie.id));
-        }
+        dispatch(
+            onList ?
+                listActions.removeFromListThunk(sessionUser.id, movie.id)
+            :
+                listActions.addToListThunk(sessionUser.id, movie.id)
+        )
     }
 
-    function expand() {
+   function expand() {
+       const extraString = location.pathname === '/browse' ? `#jbv=${movie.id}` : `${location.search}#jbv=${movie.id}`;
+        navigate(`${location.pathname}${extraString}`);
         setShowModal(true);
-        navigate(`/browse?jbv=${movie.id}`);
     }
 
     function collapse() {
         setShowModal(false);
-        navigate(`/browse`);
+        const extraString = location.pathname === '/browse' ? '' : location.search;
+        navigate(`${location.pathname}${extraString}`);
     }
 
     return (

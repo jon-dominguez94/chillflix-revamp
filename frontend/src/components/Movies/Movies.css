@@ -22,7 +22,8 @@
 }
 
 .main-thumb .main-video-info {
-    padding-left: 55px;
+    /* padding-left: 55px; */
+    padding-left: 6vw;
     position: absolute;
     /* top: 60%; */
     top: 50%;

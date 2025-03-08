@@ -10,7 +10,6 @@ const Spinner = ({ category, movies, order }) => {
 
     useEffect(() => {
         if (order === "1"){
-            // setSpinnerMovies(Object.values(listMovies));
             setSpinnerMovies(Object.values(listMovies).sort(sortByDate));
         }
     }, [listMovies]);

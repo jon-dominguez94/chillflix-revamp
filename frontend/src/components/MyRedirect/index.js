@@ -1,7 +1,9 @@
 import { Navigate } from 'react-router-dom';
 
-const MyRedirect = () => (
-    <Navigate to='/' replace />
-);
+const MyRedirect = () => {
+    return (
+        <Navigate to='/' replace />
+    )
+}
 
 export default MyRedirect;

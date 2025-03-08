@@ -12,14 +12,15 @@ const Searchbar = ({ isLoaded }) => {
     // - once content is loaded, check for search page and restore search state
     // - needed if user manually types in url or refreshes during a search
     useEffect(() => {
-        if (isLoaded) {
-            if (location.pathname === "/search") {
-                console.log('restoring queryString');
-                setQueryString(location.search.split('?=')[1]);
-                focusSearch();
-            }
-        } else {
-            console.log("not loaded");
+        if (isLoaded && location.pathname === "/search") {
+            console.log('restoring queryString');
+
+            setQueryString(
+                decodeURIComponent(location.search)
+                .split('?=')[1].toLowerCase()
+            );
+
+            focusSearch();
         }
     }, [isLoaded]);
 
@@ -32,7 +33,6 @@ const Searchbar = ({ isLoaded }) => {
         const closeMenu = () => {
             setQueryString('');
             setShowSearch(false);
-            navigate('/browse');
         };
 
         document.addEventListener('click', closeMenu);
@@ -51,7 +51,6 @@ const Searchbar = ({ isLoaded }) => {
     // updates the url query and the search bar
     function openSearch(e) {
         e.stopPropagation();
-
         navigate(`/search?=${queryString}`);
         focusSearch();
     };

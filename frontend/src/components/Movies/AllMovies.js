@@ -3,10 +3,7 @@ import { useSelector } from "react-redux";
 import Spinner from "../Browse/Spinner";
 
 const AllMovies = () => {
-    let movies = {...useSelector(state => state.movies)};
-
-    delete movies['main'];
-    movies = Object.values(movies);
+    const movies = Object.values(useSelector(state => state.movies));
 
     let set1 = [...movies];
     let set2 = shuffle([...movies]);

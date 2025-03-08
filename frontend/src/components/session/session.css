@@ -1,6 +1,7 @@
 /* **************************** */
 /* SPLASH PAGE */
 /* **************************** */
+
 .splash-container {
     background: linear-gradient(to right, #000, transparent), url('./../../assets/bb2.jpg');
     background-position: center center;

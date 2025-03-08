@@ -11,10 +11,6 @@ const Preview = ({ sessionUser, movie, onList, onClose }) => {
 
     const [ toggleList, setToggleList ] = useState(onList)
 
-    useEffect(() => {
-        navigate(`/browse?jbv=${movie.id}`);
-    }, [])
-
     function handleList() {
         if (toggleList) {
             setToggleList(false);
@@ -27,7 +23,6 @@ const Preview = ({ sessionUser, movie, onList, onClose }) => {
 
     return (
         <>
-            {/* <div className="center-flex curr-movie-wrapper"> */}
             <div className="preview-container">
                 <div className="video-wrapper">
                     <video
@@ -35,7 +30,6 @@ const Preview = ({ sessionUser, movie, onList, onClose }) => {
                         width="100%"
                         height="auto"
                         src={movie.video}
-                        // controls
                         autoPlay
                     >
                         Your browser does not support the video tag.
@@ -57,9 +51,6 @@ const Preview = ({ sessionUser, movie, onList, onClose }) => {
                         <p className="center-flex round-button plus-btn" onClick={handleList}>
                             {onList ? <i className="fa fa-check" /> : <i className="fa fa-plus"></i>}
                         </p>
-                        {/* <p className="center-flex round-button expand-btn" onClick={() => {}} >
-                            <i className="fa fa-angle-down"></i>
-                        </p> */}
                     </div>
 
                     <p className="center-flex round-button close-btn" onClick={onClose}>

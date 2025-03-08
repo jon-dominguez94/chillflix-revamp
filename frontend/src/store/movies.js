@@ -33,26 +33,21 @@ const receiveMovieAction = (movie) => {
     };
 };
 
-const initialState = {
-    main: {}
-};
+const initialState = {};
 
 const moviesReducer = (state = initialState, action) => {
     let newState;
     switch (action.type) {
         case RECEIVE_ALL_MOVIES:
-            newState = Object.assign({}, state);
+            newState = {...state};
 
             for (let movie of action.payload) {
                 newState[movie.id] = movie;
-                if (movie.title === "Game of Thrones") {
-                    newState["main"] = movie;
-                }
             }
 
             return newState;
         case RECEIVE_ONE_MOVIE:
-            newState = Object.assign({}, state);
+            newState = {...state};
             newState[action.payload.id] = action.payload
             return newState;
         default:

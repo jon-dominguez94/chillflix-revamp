@@ -6,11 +6,6 @@ import Navigation from "./components/Navigation";
 import SplashPage from "./components/session/SplashPage";
 import LoginForm from "./components/session/LoginFormModal/LoginForm";
 import SearchPage from "./components/Search";
-
-// remove
-import TempPage from "./components/Temp";
-//
-
 import Browse from "./components/Browse";
 import Watch from "./components/Movies/Watch";
 import MyRedirect from "./components/MyRedirect";
@@ -35,7 +30,7 @@ function App() {
           <Route path="/signup" element={<LoginForm signup={true} />} />
 
           <Route path="/browse/*" element={<Browse />} />
-          <Route path="/search" element={<SearchPage />} />
+          <Route path="/search/*" element={<SearchPage />} />
 
           <Route path="/watch/:watchId" element={<Watch />} />
           <Route path="*" element={<MyRedirect />} />
