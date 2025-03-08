@@ -1,19 +1,24 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 import * as listActions from '../../store/list';
 
 const MainVideo = ({movies}) => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const sessionUser = useSelector(state => state.session.user);
-    // const movies = useSelector(state => state.movies);
     const list = useSelector(state => state.list);
 
     const key = Object.keys(movies).find(key => movies[key].title === "Game of Thrones");
     const movie = movies[key];
 
     const [ onList, setOnList ] = useState(false);
+
+     // clear out url params
+    useEffect(() => {
+        navigate(`/browse`);
+    }, [])
 
     useEffect(() => {
         setOnList(movie.id in list);

@@ -1,14 +1,12 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import MyRedirect from "../MyRedirect";
 import MainVideo from "../Movies/MainVideo";
 import AllMovies from "../Movies/AllMovies";
 import Footer from "./Footer";
-
 import DisplayPage from "./DisplayPage";
-import TempPage from "../Temp";
 
 import './Browse.css';
 import '../Movies/Movies.css';
@@ -18,17 +16,10 @@ import * as listActions from '../../store/list';
 
 const Browse = () => {
     const dispatch = useDispatch();
-    const navigate = useNavigate();
     const sessionUser = useSelector(state => state.session.user);
     const movies = useSelector(state => state.movies);
-    // const list = useSelector(state => state.list);
     const [isMoviesLoaded, setIsMoviesLoaded ] = useState(false);
     const [isListLoaded, setIsListLoaded ] = useState(false);
-
-    // clear out url params
-    useEffect(() => {
-        navigate(`/browse`);
-    }, [])
 
     useEffect(() => {
         dispatch(moviesActions.receiveMoviesThunk())

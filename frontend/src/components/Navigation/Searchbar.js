@@ -28,8 +28,6 @@ const Searchbar = ({ isLoaded }) => {
     useEffect(() => {
         if (showSearch === false) return;
 
-        console.log('creating close menu');
-
         const closeMenu = () => {
             setQueryString('');
             setShowSearch(false);
