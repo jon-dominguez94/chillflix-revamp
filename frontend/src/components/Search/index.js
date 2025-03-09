@@ -27,7 +27,6 @@ const SearchPage = () => {
     }, [])
 
     useEffect(() => {
-        console.log('loading state');
         dispatch(movieActions.receiveMoviesThunk())
             .then(() => setIsMoviesLoaded(true))
             .then(() => dispatch(listActions.getListThunk(sessionUser.id)))

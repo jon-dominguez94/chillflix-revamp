@@ -13,7 +13,6 @@ const Searchbar = ({ isLoaded }) => {
     // - needed if user manually types in url or refreshes during a search
     useEffect(() => {
         if (isLoaded && location.pathname === "/search") {
-            console.log('restoring queryString');
 
             setQueryString(
                 decodeURIComponent(location.search)

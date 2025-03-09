@@ -33,13 +33,13 @@ const Browse = () => {
     return (
         <>
             {isMoviesLoaded && isListLoaded && (
+                <>
                 <Routes>
                     <Route path="/" element={
                         <>
                             <div className="browse-container">
                                 <MainVideo movies={movies} />
                                 <AllMovies movies={movies} />
-                                <Footer />
                             </div>
                         </>
                     } />
@@ -48,6 +48,8 @@ const Browse = () => {
                     <Route path="/list" element={<DisplayPage name="list" />} />
                     <Route path="*" element={<MyRedirect />} />
                 </Routes>
+                <Footer />
+                </>
             )}
         </>
     )

@@ -178,12 +178,13 @@
 /* **************************** */
 
 .logged-footer {
-    width: 90vw;
-    padding: 80px 80px;
     box-sizing: border-box;
     color: #a6a6a6;
     display: flex;
     justify-content: center;
+    margin-top: 200px;
+    padding: 80px 80px 40px;
+    width: 100vw;
 }
 
 .logged-footer .footer-wrapper {

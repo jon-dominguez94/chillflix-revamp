@@ -25,11 +25,6 @@ const DisplayPage = ({movies, name}) => {
                 movies || []
 
         )
-        //     console.log('list');
-        //     setDisplayMovies(Object.values(listMovies).sort(sortByDate));
-        // } else {
-        //     setDisplayMovies(movies || []);
-        // }
     }, [movies, listMovies]);
 
     function sortByDate(a, b) {
@@ -39,7 +34,7 @@ const DisplayPage = ({movies, name}) => {
     }
 
     return (
-        <>
+        <div className="display-page-container">
             <div className="search-page-container">
                 {displayMovies.map(movie => (
                     <div key={`display-${movie.id}`} className="filter-container">
@@ -47,7 +42,7 @@ const DisplayPage = ({movies, name}) => {
                     </div>
                 ))}
             </div>
-        </>
+        </div>
     )
 };
 
