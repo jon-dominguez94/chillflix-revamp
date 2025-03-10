@@ -30,6 +30,7 @@ const Searchbar = ({ isLoaded }) => {
         const closeMenu = () => {
             setQueryString('');
             setShowSearch(false);
+            if (inputRef.current.value === '') navigate('/browse');
         };
 
         document.addEventListener('click', closeMenu);
