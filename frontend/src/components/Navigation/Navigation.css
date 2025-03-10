@@ -168,8 +168,9 @@
 }
 
 .navigation-wrapper .white {
-    border-color: white;
     background: #141414;
+    border-color: white;
+
 }
 
 .navigation-wrapper .not-displayed {
@@ -228,8 +229,8 @@
 }
 
 .navigation-wrapper #my-dropdown {
-    border: 0.3px solid #777777;
     background: rgba(0, 0, 0, 0.8);
+    border: 0.3px solid #777777;
 }
 
 .navigation-wrapper #my-dropdown * {

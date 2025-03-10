@@ -17,15 +17,7 @@ body {
     display: flex;
 }
 
-.noshow {
-    display: none;
-}
-
-.shown {
-    display: block;
-}
-
 .invisible {
-    visibility: hidden;
     opacity: 0;
+    visibility: hidden;
 }

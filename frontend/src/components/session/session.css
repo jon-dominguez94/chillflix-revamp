@@ -54,6 +54,7 @@
     display: flex;
     padding: 10px 8px;
     justify-content: center;
+    transition: width 0.3s;
     width: 150px;
 }
 
@@ -90,8 +91,8 @@
 
 .modal-screen {
     background: rgba(0, 0, 0, 0.5);
-    min-width: 100vw;
     min-height: 100vh;
+    min-width: 100vw;
     padding-bottom: 70px;
 }
 
@@ -192,8 +193,8 @@
 }
 
 .prompt {
-    position: absolute;
     bottom: 40px;
+    position: absolute;
     font-weight: bold;
 }
 
@@ -219,10 +220,6 @@
     .signup {
         width: 350px;
     }
-}
-
-@media screen and (min-width: 1025px) {
-
 }
 
 @media screen and (max-height: 750px) {

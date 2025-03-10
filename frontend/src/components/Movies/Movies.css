@@ -1,41 +1,32 @@
 /* **************************** */
 /* MAIN MOVIE */
 /* **************************** */
+
 .main-thumb {
-    /* // display: inline-block; */
-    position: relative;
-    /* background: linear-gradient(to top, #000, transparent); */
     background: linear-gradient(to top, #141414, transparent);
-    /* background: linear-gradient(to top, #141414, transparent),
-                linear-gradient(to bottom, #222 -1%, transparent 10%); */
-    width: 100vw;
     height: auto;
-    /* display: none; */
-    /* // height: 75vh; */
+    position: relative;
+    width: 100vw;
 }
 
 .main-thumb .main-gif {
-    width: 100%;
-    position: relative;
     content: url('https://s3-us-west-1.amazonaws.com/chillflix-prod/got.gif');
+    position: relative;
+    width: 100%;
     z-index: -1;
 }
 
 .main-thumb .main-video-info {
-    /* padding-left: 55px; */
     padding-left: 6vw;
     position: absolute;
-    /* top: 60%; */
     top: 50%;
-    width: 50%;
-    /* max-width: 450px; */
     transition: top 0.3s;
-    /* // z-index: 2000; */
+    width: 50%;
 }
 
 .main-thumb .original {
-    text-transform: uppercase;
     font-weight: 200;
+    text-transform: uppercase;
 }
 
 .main-thumb .original span {
@@ -44,82 +35,68 @@
 }
 
 .main-thumb .main-video-title {
-    font-size: 15px;
-    /* // margin-bottom:25px; */
-    white-space: nowrap;
-    transition: font-size 0.3s;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    /* // font-family: Georgia, 'Times New Roman', Times, serif; */
+    font-size: 15px;
+    transition: font-size 0.3s;
+    white-space: nowrap;
 }
 
 .main-thumb .got-logo {
-    min-width: 220px;
     margin: 10px 0 15px 0;
-}
-
-.main-thumb img {
-    /* position: relative; */
-    z-index: -1;
+    min-width: 220px;
 }
 
 .main-thumb .main-video-links {
     display: flex;
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
     margin-top: 15px;
 }
 
 .preview-container .main-video-link,
 .main-thumb .main-video-link {
-    margin-right: 10px;
-    padding: 10px 30px;
+    align-items: center;
     background: rgba(50, 50, 50, 0.35);
+    border-color: transparent transparent transparent black;
     border-radius: 3px;
     cursor: pointer;
-    font-weight: 700;
-    font-size: 14px;
-    /* border-color: transparent transparent transparent #dddddd; */
-    border-color: transparent transparent transparent black;
     display: flex;
+    font-size: 14px;
+    font-weight: 700;
     justify-content: center;
-    align-items: center;
+    margin-right: 10px;
+    padding: 10px 30px;
 }
 
 .preview-container .main-video-link span,
 .main-thumb .main-video-link span {
-    /* // margin-left: 10px; */
     white-space: nowrap;
 }
 
 .preview-container .main-video-link:hover,
 .main-thumb .main-video-link:hover {
     filter: brightness(80%);
-    /* color: black;
-    background: #dddddd;
-    border-color: transparent transparent transparent #202020; */
 }
 
 .preview-container .play-btn .main-video-link,
 .main-thumb .play-btn .main-video-link {
-    color: black;
     background: #dddddd;
+    color: black;
 }
 
 .main-thumb .list-btn .main-video-link {
-    /* color: black; */
     background-color: rgba(109, 109, 110, 0.7);
 }
 
 .preview-container .button.play,
 .main-thumb .button.play {
-    box-sizing: border-box;
-    /* color: white; */
-    width: 17px;
-    height: 17px;
-    border-style: solid;
-    border-width: 8px 0px 8px 16px;
     border-color: inherit;
     border-radius: 2px;
+    border-style: solid;
+    border-width: 8px 0px 8px 16px;
+    box-sizing: border-box;
+    height: 17px;
     margin-right: 10px;
+    width: 17px;
 }
 
 .main-thumb .plus-wrapper {
@@ -155,9 +132,6 @@
     position: relative;
     transition: color 0.7s;
     -webkit-transition: color 0.7s;
-    /* remove */
-    /* width: 100vw; */
-    /* height: auto; */
 }
 
 .curr-movie-wrapper #video-container,
@@ -169,10 +143,9 @@
     color: white;
 }
 
-/* may need */
-/* .curr-movie-wrapper #video-container:-webkit-full-screen {
+.curr-movie-wrapper #video-container:-webkit-full-screen {
     width: 100%;
-} */
+}
 
 .not-found {
     height: 100vh;
@@ -202,13 +175,12 @@
 
 .preview-container {
     background: #141414;
+    border-radius: 10px;
     box-shadow: 0px 0px 10px 1px #111;
     margin: 0 auto;
     max-width: 750px;
-    /* position: relative; */
-    width: 97vw;
-    border-radius: 10px;
     overflow: hidden;
+    width: 97vw;
 }
 
 .preview-container .video-wrapper {
@@ -216,16 +188,13 @@
 }
 
 .preview-container .play-area {
-
     background: linear-gradient(to top, #141414, transparent 50%);
 }
 
 .preview-container .tn-links {
-    position: absolute;
     bottom: 5vw;
     left: 3vw;
-    /* padding: 6vw 3vw 6vw; */
-    /* background: red; */
+    position: absolute;
     width: 100%;
 }
 
@@ -233,10 +202,10 @@
     background-color: rgba(0, 0, 0, 0.5);
     border: 2px solid #aaa;
     border-radius: 50%;
+    cursor: pointer;
     font-size: 20px;
     height: 35px;
     justify-content: center;
-    cursor: pointer;
     text-align: center;
     transition: all 0.3s ease;
     width: 35px;
@@ -249,28 +218,22 @@
 }
 
 .preview-container .round-button .fa {
-    /* padding-top: 0.4vw; */
     padding-top: 2px;
 }
 
 .preview-container .close-btn {
     background-color: rgba(0, 0, 0, 0.7);
-    position: absolute;
     border: none;
-    top: 15px;
+    position: absolute;
     right: 15px;
-    /* font-size: 3.3vw; */
-    /* font-size: 20px; */
+    top: 15px;
 }
 
 .preview-container .close-btn .fa {
-    /* position: absolute; */
-    /* border: none; */
     padding-top: 0 !important;
 }
 
 .preview-container .bottom-info {
-    /* background: red; */
     display: flex;
     flex-wrap: nowrap;
     font-size: 12px;
@@ -292,10 +255,7 @@
 }
 
 .preview-container .preview-description {
-    /* font-size: 14px; */
-
     letter-spacing: 1px;
-
 }
 
 .preview-container .fake-info {
@@ -319,45 +279,16 @@
 
 @media screen and (min-width: 769px) {
     .main-thumb .main-video-title {
-            /* font-size: 30px !important; */
-            font-size: 30px;
-        }
+        font-size: 30px;
+    }
 
     .main-thumb .main-video-description {
         display: block;
     }
-
-    /* .preview-container .round-button {
-        height: 2.5vw;
-        font-size: 1.5vw;
-        width: 2.5vw;
-    } */
-
-    /* .preview-container .round-button .fa {
-        padding-top: 0.1vw;
-    } */
-
-    /* .preview-container .close-btn {
-        font-size: 1.5vw;
-    } */
 }
 
 @media screen and (min-width: 1025px) {
     .main-thumb .main-video-info {
         top: 60% !important;
-        /* top: 70%; */
     }
 }
-
-/* @media screen and (max-height: 750px) {}
-
-@media screen and (max-width: 1220px) {
-    .main-video-info {
-        top: 50% !important;
-    }
-
-    .main-video-title {
-        font-size: 20px !important;
-    }
-
-} */

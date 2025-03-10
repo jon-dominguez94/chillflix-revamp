@@ -1,6 +1,7 @@
 /* **************************** */
 /* SEARCH PAGE */
 /* **************************** */
+
 .display-page-container {
     min-height: 60vh;
 }
@@ -20,16 +21,8 @@
 /* MEDIA QUERIES */
 /* **************************** */
 
-@media screen and (min-width: 481px) {
-}
-
 @media screen and (min-width: 769px) {
     .search-page-container .spinner-item-wrapper {
         margin-bottom: 0.8vw;
     }
-}
-
-@media screen and (min-width: 1025px) {}
-
-@media screen and (max-height: 750px) {
 }
