@@ -32,7 +32,7 @@ const SpinnerItem = ({movie}) => {
     }
 
    function expand() {
-       const extraString = location.pathname === '/browse' ? `#jbv=${movie.id}` : `${location.search}#jbv=${movie.id}`;
+        const extraString = location.pathname === '/browse' ? `#jbv=${movie.id}` : `${location.search}#jbv=${movie.id}`;
         navigate(`${location.pathname}${extraString}`);
         setShowModal(true);
     }
