@@ -29,6 +29,7 @@ const Preview = ({ sessionUser, movie, onList, onClose }) => {
                         className=""
                         width="100%"
                         height="auto"
+                        playsInline
                         src={movie.video}
                         autoPlay
                     >

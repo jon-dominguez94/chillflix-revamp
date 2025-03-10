@@ -7,6 +7,8 @@ import SpinnerItem from "./SpinnerItem"
 const Spinner = ({ category, movies, order }) => {
     const listMovies = useSelector(state => state.list);
     const [ spinnerMovies, setSpinnerMovies ] = useState(movies || []);
+    const [touchStart, setTouchStart] = useState(null);
+    const [touchEnd, setTouchEnd] = useState(null);
 
     useEffect(() => {
         if (order === "1"){
@@ -19,6 +21,30 @@ const Spinner = ({ category, movies, order }) => {
         const d2 = new Date(b.ListMovie.createdAt);
         return d1 - d2;
     }
+
+    const handleTouchStart = (e) => {
+        setTouchStart(e.changedTouches[0].clientX);
+    };
+
+    const handleTouchMove = (e) => {
+        setTouchEnd(e.changedTouches[0].clientX);
+    };
+
+    const handleTouchEnd = () => {
+        if (!touchStart || !touchEnd) return;
+
+        const deltaX = touchEnd - touchStart;
+
+        if (deltaX > 0) {
+            scroll('right');
+        } else {
+            scroll('left');
+        }
+
+        // Reset touch points
+        setTouchStart(null);
+        setTouchEnd(null);
+    };
 
     function scroll(direction) {
         let newMovies = [...spinnerMovies];
@@ -35,7 +61,12 @@ const Spinner = ({ category, movies, order }) => {
     return (
         <>
             {spinnerMovies.length > 0 && (
-                <div className="spinner">
+                <div
+                    className="spinner"
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchEnd={handleTouchEnd}
+                >
                     <h1 className="category-header">{category}</h1>
                     <div className="tn-scale">
 
