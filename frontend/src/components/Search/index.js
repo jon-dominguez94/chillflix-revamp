@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import SpinnerItem from "../Browse/SpinnerItem";
+import Footer from "../Browse/Footer";
 
 import * as movieActions from '../../store/movies';
 import * as listActions from '../../store/list';
@@ -48,13 +49,18 @@ const SearchPage = () => {
     return (
         <>
             {isMoviesLoaded && isListLoaded && (
-                <div className="search-page-container">
-                    { filteredMovies.map(movie => (
-                        <div key={`filter-${movie.id}`} className="filter-container">
-                            <SpinnerItem movie={movie} />
+                <>
+                    <div className="display-page-container">
+                        <div className="search-page-container">
+                            { filteredMovies.map(movie => (
+                                <div key={`filter-${movie.id}`} className="spinner-item-wrapper filter-container">
+                                    <SpinnerItem movie={movie} />
+                                </div>
+                            ))}
                         </div>
-                    ))}
-                 </div>
+                    </div>
+                    <Footer />
+                </>
             )}
         </>
     )

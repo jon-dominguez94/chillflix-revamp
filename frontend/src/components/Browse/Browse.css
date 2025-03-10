@@ -10,9 +10,7 @@
 .spinner {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 15px 0;
-    padding-left: 6vw;
+    padding: 15px 0 15px 6vw;
     position: relative;
 }
 
@@ -25,8 +23,7 @@
 
 .spinner .tn-scale {
     position: relative;
-    left: 0;
-    transition: left 1s ease-in-out;
+    white-space: nowrap;
 }
 
 .spinner:hover .scroll {
@@ -48,6 +45,7 @@
     top: 0;
     transition: visibility 0.3s, opacity 0.3s linear, font-size 0.2s;
     width: 6vw;
+    z-index: 4;
 }
 
 .spinner .right.scroll {
@@ -67,18 +65,31 @@
 /* SPINNER ITEM */
 /* **************************** */
 
+.spinner-item-wrapper {
+    display: inline-block;
+    margin: 0 0.4vw;
+    position: relative;
+    width: 43.2vw;
+}
+
+
 .spinner-item {
+    /* border-radius: 4px; */
     cursor: pointer;
     height: 23.7vw;
-    margin: 0 3px;
+    /* background: blue; */
+    /* overflow: hidden; */
+    /* margin: 0 3px; */
     position: relative;
     transition: transform 0.2s ease-in, box-shadow 0.2s;
+    width: 100%;
 }
+
 
 .spinner-item.enlarge:hover {
     box-shadow: 0px -3px 8px 1px #555;
-    transform: scale(130%);
-    z-index: 3;
+    transform: scale(125%);
+    z-index: 5;
 }
 
 .spinner-item.enlarge:hover>* {
@@ -86,16 +97,24 @@
     opacity: 1;
 }
 
+.spinner-item.enlarge:hover .tn-links {
+    /* height: auto;
+    padding: 13px; */
+}
+
 .spinner-item.enlarge:hover .movie-tn {
     border-radius: 4px 4px 0 0;
 }
 
+
 .spinner-item .movie-tn {
     border-radius: 4px;
-    height: 100%;
-    min-width: 100%;
-    object-fit: fill;
-    width: auto;
+    /* height: 100%; */
+    /* min-width: 100%; */
+    object-fit: cover;
+    object-position: center;
+    /* width: auto; */
+    /* width: 100%; */
 }
 
 .preview-container .play-area,
@@ -106,14 +125,18 @@
     position: absolute;
     right: 0;
     top: 0;
+    /* background: green; */
 }
 
 .spinner-item .tn-links {
     background: #222;
     border-radius: 0 0 5px 5px;
     box-shadow: 0px 3px 8px 1px #555;
+    /* height: 0; */
     padding: 13px;
+    position: absolute;
     transition: all 0.2s ease;
+    width: 100%;
 }
 
 .spinner-item .round-button {
@@ -146,7 +169,7 @@
 }
 
 .spinner-item .play-btn .fa {
-    padding-left: 3px;
+    /* padding-left: 3px; */
 }
 
 .spinner-item .play-btn:hover {
@@ -158,7 +181,7 @@
 }
 
 .spinner-item .round-button .fa {
-    padding-top: 0.4vw;
+    /* padding-top: 2px; */
 }
 
 .preview-container .plus-btn:hover,
@@ -182,9 +205,13 @@
     color: #a6a6a6;
     display: flex;
     justify-content: center;
-    margin-top: 200px;
+    margin-top: 40px;
     padding: 80px 80px 40px;
     width: 100vw;
+
+    /* position: absolute; */
+    /* bottom: 0; */
+    /* left: 0; */
 }
 
 .logged-footer .footer-wrapper {
@@ -231,22 +258,32 @@
 /* **************************** */
 
 @media screen and (min-width: 481px) {
+    .spinner-item-wrapper {
+        width: 28.5vw;
+    }
 
+    .spinner-item {
+        height: 15.8vw;
+    }
 }
 
 @media screen and (min-width: 769px) {
+    .spinner-item .round-button .fa {
+        padding-top: 2px;
+    }
+
+    .spinner-item-wrapper {
+        width: 21.2vw;
+    }
+
     .spinner-item {
-        height: 16vw;
+        height: 11.8vw;
     }
 
     .spinner-item .round-button {
         height: 2.5vw;
         font-size: 1.5vw;
         width: 2.5vw;
-    }
-
-    .spinner-item .round-button .fa {
-        padding-top: 0.2vw;
     }
 
     .spinner-item .tn-title {
@@ -256,5 +293,28 @@
 }
 
 @media screen and (min-width: 1025px) {
+    .spinner-item-wrapper {
+        width: 16.8vw;
+    }
 
+    .spinner-item {
+        height: 9.3vw;
+    }
+}
+
+@media (hover: none) {
+    .spinner .scroll {
+        /* background: rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        font-size: 4vw;
+        height: 100%;
+        justify-content: center;
+        position: absolute;
+        top: 0; */
+        /* transition: visibility 0.3s, opacity 0.3s linear, font-size 0.2s; */
+        /* width: 6vw; */
+        /* z-index: 4; */
+        visibility: visible;
+        opacity: 1;
+    }
 }

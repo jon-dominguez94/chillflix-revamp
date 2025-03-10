@@ -1,27 +1,19 @@
 /* **************************** */
 /* SEARCH PAGE */
 /* **************************** */
+.display-page-container {
+    min-height: 60vh;
+}
+
 .search-page-container {
-    /* background: red; */
-    margin-top: 100px;
-    padding: 0 14vw;
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: space-between; */
+    margin-top: 100px;
+    padding: 0 6vw;
 }
 
-.filter-container {
-    display: inline-block;
-    margin: 2vw 0.3vw;
-}
-
-.filter-container .spinner-item {
-    /* display: inline-block; */
-    height: 19vw;
-}
-
-.filter-container .spinner-item .round-button .fa {
-    padding-top: 0.2px;
+.search-page-container .spinner-item-wrapper {
+    margin-bottom: 0.6vw;
 }
 
 /* **************************** */
@@ -32,21 +24,8 @@
 }
 
 @media screen and (min-width: 769px) {
-    .filter-container {
-        margin: 2vw 0.05vw;
-    }
-
-    .search-page-container {
-        /* margin-top: 100px; */
-        padding: 0 5.5vw;
-    }
-
-    .filter-container .spinner-item {
-        height: 11.7vw;
-    }
-
-    .filter-container .spinner-item .round-button .fa {
-        padding-top: 1.5px;
+    .search-page-container .spinner-item-wrapper {
+        margin-bottom: 0.8vw;
     }
 }
 

@@ -37,7 +37,7 @@ const Spinner = ({ category, movies, order }) => {
             {spinnerMovies.length > 0 && (
                 <div className="spinner">
                     <h1 className="category-header">{category}</h1>
-                    <div className="center-flex tn-scale">
+                    <div className="tn-scale">
 
                         { spinnerMovies.map(movie => { return (
                             <div key={`${order}-${movie.id}`} className="spinner-item-wrapper">

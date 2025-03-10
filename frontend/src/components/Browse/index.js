@@ -34,21 +34,21 @@ const Browse = () => {
         <>
             {isMoviesLoaded && isListLoaded && (
                 <>
-                <Routes>
-                    <Route path="/" element={
-                        <>
-                            <div className="browse-container">
-                                <MainVideo movies={movies} />
-                                <AllMovies movies={movies} />
-                            </div>
-                        </>
-                    } />
-                    <Route path="/recentlyadded" element={<DisplayPage movies={Object.values(movies).slice(0,8)} name="recent" />} />
-                    <Route path="/comingsoon" element={<DisplayPage movies={Object.values(movies).slice(8)} name="soon" />} />
-                    <Route path="/list" element={<DisplayPage name="list" />} />
-                    <Route path="*" element={<MyRedirect />} />
-                </Routes>
-                <Footer />
+                    <Routes>
+                        <Route path="/" element={
+                            <>
+                                <div className="browse-container">
+                                    <MainVideo movies={movies} />
+                                    <AllMovies movies={movies} />
+                                </div>
+                            </>
+                        } />
+                        <Route path="/recentlyadded" element={<DisplayPage movies={Object.values(movies)} name="recent" />} />
+                        {/* <Route path="/comingsoon" element={<DisplayPage movies={Object.values(movies).slice(8)} name="soon" />} /> */}
+                        <Route path="/list" element={<DisplayPage name="list" />} />
+                        <Route path="*" element={<MyRedirect />} />
+                    </Routes>
+                    <Footer />
                 </>
             )}
         </>

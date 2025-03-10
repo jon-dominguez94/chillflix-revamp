@@ -27,7 +27,7 @@ const AllMovies = () => {
             <Spinner category="Recently Added" movies={set1.slice(0, 8)} order="2" />
             <Spinner category="Popular on Chillflix" movies={set1.slice(8)} order="3" />
             <Spinner category="Chill Night" movies={set2.slice(0, 8)} order="4" />
-            <Spinner category="Coming Soon" movies={set2.slice(8)} order="5" />
+            <Spinner category="Family Favorites" movies={set2.slice(8)} order="5" />
         </div>
     )
 }

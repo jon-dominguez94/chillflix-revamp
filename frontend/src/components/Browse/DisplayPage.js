@@ -37,7 +37,7 @@ const DisplayPage = ({movies, name}) => {
         <div className="display-page-container">
             <div className="search-page-container">
                 {displayMovies.map(movie => (
-                    <div key={`display-${movie.id}`} className="filter-container">
+                    <div key={`display-${movie.id}`} className="spinner-item-wrapper filter-container">
                         <SpinnerItem movie={movie} />
                     </div>
                 ))}
