@@ -7,6 +7,7 @@
 - [Site](#site)
   - [Splash Page](#splash-page)
   - [Videos](#videos)
+  - [My List](#my-list)
   - [Info](#info)
 - [Feature Highlights](#feature-highlights)
   - [Video Search](#video-search)
@@ -23,8 +24,8 @@ Some key changes include:
 * Simplifying the overall code to make it more efficient and readable
 * Modernizing the UI to more closely match that of the current Netflix UI
 * Making the entire app truly responsive
- * Content dependent on screen size
- * Support for touch screens
+  * Content dependent on screen size
+  * Support for touch screens
 
 
 
@@ -41,7 +42,7 @@ Features cloned from Netflix include:
 * Search functionality
 * Video playback
 
-### Demo
+## Demo
 [Live Link](https://flix-n-chill.herokuapp.com/#/)
 
 ## Technologies
@@ -65,7 +66,7 @@ Chillflix videos are featured on scroll wheels according to their categories. Sc
 
 ### My List
 
-Users can add videos to their watch list with the click of a button. The button exists everywhere a link to the movie exists. Upon clicking, the association will be updated on the backend and the button display will update as needed. The sections displaying the user's list will also update in real time
+Users can add videos to their watch list with the click of a button. The button exists everywhere a link to the movie exists. Upon clicking, the association will be updated on the backend and the button icon will update as needed. The sections displaying the user's list will also update in real time
 
 ![](./screenshots/list.png)
 
@@ -115,14 +116,15 @@ const SearchPage = () => {
 
 ### Video Info Modal and Effects
 
-When a movie's expand button is clicked, a modal is supposed to popup with an updated url. The modal plays a preview of the movie, displays control buttons, and lists info about the movie.
+When a movie's expand button is clicked, a modal is supposed to popup with an updated URL. The modal plays a preview of the movie, displays control buttons, and lists info about the movie.
 
 This was updated from the original iteration of individual dropdowns which was a challenge to implement.
 
 To display the modal on top of the existing content without changing routes, I utilized the `useContext` hook and `React.createPortal` method.
-* I wrapped the app in the modal context which held a `div` separately from the rest of the app's content
+* I created a modal context and a `Provider` for that context. The provider held a `div` to be rendered separately from it's `children`. This Provider was wrapped around the entire app.
 * Then I created a `Modal` functional component that returns a call to `React.createPortal()` passing in any `children` props and the modal context
-* This `Modal` functional component was called from the browse page's spinners and all the display page's to show the video info popup as a modal on top of the existing page
+* The `children` are then rendered within the modal context provider's separate `div` using `CSS` to position it on top of the content
+* This `Modal` functional component was called from the browse page's video carousels and all the display pages to show the video info popup as a modal on top of whichever page called it
 
 
 ![](./screenshots/info2.png)
