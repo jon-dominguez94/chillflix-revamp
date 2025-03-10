@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import MyRedirect from '../../MyRedirect';
@@ -8,6 +8,7 @@ import * as sessionActions from '../../../store/session';
 const LoginForm = ({signup}) => {
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
+    const demoRef = useRef();
 
     const [credential, setCredential] = useState('');
     const [email, setEmail] = useState('');
@@ -94,6 +95,7 @@ const LoginForm = ({signup}) => {
 
     const demoLogin = (e) => {
         e.preventDefault();
+        demoRef.current.setAttribute('disabled', '');
 
         setDemoComplete(false);
         setErrors([]);
@@ -116,6 +118,7 @@ const LoginForm = ({signup}) => {
 
     function fillPassword(demoPassword) {
         if (!demoPassword) {
+            demoRef.current.removeAttribute('disabled');
             return setDemoComplete(true);
         }
         setPassword((prev) => prev + demoPassword[0]);
@@ -226,7 +229,7 @@ const LoginForm = ({signup}) => {
 
                                     <button className="form-input form-btn" type="submit">{signup ? "Sign Up" : "Sign In"}</button>
 
-                                    {!signup && (<button className="form-input form-btn demo-btn" onClick={demoLogin}>Demo Login</button>)}
+                                    {!signup && (<button ref={demoRef} className="form-input form-btn demo-btn" onClick={demoLogin}>Demo Login</button>)}
                                 </div>
                                 <div className="prompt">
                                     <span className="grey-text">{signup ? "Already have an acount? " : "New to Chillflix? "}</span>
