@@ -19,6 +19,17 @@ const Watch = () => {
             .then(() => setIsMoviesLoaded(true));
     }, [dispatch]);
 
+    function setControls() {
+        const video = document.getElementById("current-video");
+        if (video) {
+            if (window.matchMedia("(pointer: coarse)").matches) {
+                video.removeAttribute('controls');
+            } else {
+                video.setAttribute('controls', true);
+            }
+        }
+    }
+
 
     if (!sessionUser) return (<MyRedirect />);
 
@@ -39,13 +50,13 @@ const Watch = () => {
     return (
         <>
             {isMoviesLoaded && (<div className="center-flex curr-movie-wrapper">
-                <div id="video-container">
+                <div id="video-container" onMouseOver={setControls}>
                     <video
+                        id="current-video"
                         className="current-video"
                         width="100%"
                         height="auto"
                         src={movie.video}
-                        controls
                         autoPlay
                     >
                         Your browser does not support the video tag.
